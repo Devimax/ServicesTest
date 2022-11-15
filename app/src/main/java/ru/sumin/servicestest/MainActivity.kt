@@ -11,6 +11,8 @@ import ru.sumin.servicestest.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private var id = 0
+
     private val binding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
@@ -42,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             .setContentText("Text")
             .setSmallIcon(R.drawable.ic_launcher_background)
             .build()
-        notificationManager.notify(1, notification)
+        notificationManager.notify(id++, notification)
     }
 
     companion object {
