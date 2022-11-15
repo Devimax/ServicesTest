@@ -1,5 +1,6 @@
 package ru.sumin.servicestest
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ru.sumin.servicestest.databinding.ActivityMainBinding
@@ -13,5 +14,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        binding.simpleService.setOnClickListener {
+            startService(MyService.newIntent(this))
+        }
     }
 }
